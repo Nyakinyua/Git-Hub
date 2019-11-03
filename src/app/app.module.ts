@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { FormComponent } from './form/form.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DateFormatPipe } from './date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UserComponent,
     FormComponent,
     NavBarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,
