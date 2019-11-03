@@ -27,7 +27,7 @@ export class UserHtttpService {
       avatar_url: string;
     }
 
-    let searchPoint = 'https://api.github.com/users/' + searchTerm + 'api_key=' + environment.apiKey;
+    let searchPoint = 'https://api.github.com/users/' + searchTerm + 'access_token=' + environment.apiKey;
     searchPoint += "&q="+searchTerm;
     console.log(searchPoint);
 

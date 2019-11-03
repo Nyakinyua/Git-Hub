@@ -9,6 +9,7 @@ import { FormComponent } from './form/form.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DateFormatPipe } from './date-format.pipe';
+import { RepoHoverDirective } from './repo-hover.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DateFormatPipe } from './date-format.pipe';
     FormComponent,
     NavBarComponent,
     NotFoundComponent,
-    DateFormatPipe
+    DateFormatPipe,
+    RepoHoverDirective
   ],
   imports: [
     BrowserModule,
