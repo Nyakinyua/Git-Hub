@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import { Repo } from '../repo';
 import { User } from '../user';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,7 +27,8 @@ export class UserHtttpService {
       avatar_url: string;
     }
 
-    let searchPoint = 'https://api.github.com/users/' + searchTerm + '?access_token=' + environment.apiKey;
+    let searchPoint = 'https://api.github.com/users/' + searchTerm + 'api_key=' + environment.apiKey;
+    searchPoint += "&q="+searchTerm;
     console.log(searchPoint);
 
     let promise = new Promise((resolve, reject) => {
@@ -58,7 +60,7 @@ export class UserHtttpService {
      created_at: Date;
     }
 
-    let searchPoint = 'https://api.github.com/users/' + searchTerm + '/repos?access_token=' + environment.apiKey;
+    let searchPoint = 'https://api.github.com/users/' + searchTerm + '/repos?access_token=' +environment.apiKey;
 
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse[]>(searchPoint).toPromise().then(
