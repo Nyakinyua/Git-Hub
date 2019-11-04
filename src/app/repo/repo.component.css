@@ -8,6 +8,7 @@
    transition: .35s box-shadow;
    text-align: center;
    font-size: 30px;
+   font-weight: 800;
   }
   .card:focus, .card:hover {
    box-shadow: 0 5px 11px 0 rgba(20, 20, 20, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -15,4 +16,7 @@
   .card-inverse .card-img-overlay {
    background-color: rgba(19, 14, 14, 0.85);
    border-color: rgba(22, 14, 14, 0.85);
+  }
+  .card-img-top  {
+      width: 280;
   }
