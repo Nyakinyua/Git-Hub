@@ -5,31 +5,34 @@ import { Repo } from '../repo';
 import { User } from '../user';
 
 
+
 @Injectable({
   providedIn: 'root'
-})
-export class UserHtttpService {
+}) 
+export class UserHtttpService{
 
   user: User;
-  repos: Repo[] = [];
+  repos: Repo[]=[];
   constructor(private http:HttpClient) {
     this.user = new User (0,"","");
     // this.repos []= new Repo [("","","", new Date();
    }
 
+  //  apiKey="3268d36076fd5b927c335e89b59855b3779800a2"
+
    searchUsers(searchTerm: string) {
 
     console.log(searchTerm);
-
+  
     interface ApiResponse {
-      id: number;
+      id: number;       
       login: string;
       avatar_url: string;
     }
 
-    let searchPoint = 'https://api.github.com/users/' + searchTerm + 'access_token=' + environment.apiKey;
-    searchPoint += "&q="+searchTerm;
-    console.log(searchPoint);
+    let searchPoint = 'https://api.github.com/users/' + searchTerm + '?access_token=' + environment.apiKey;
+   
+    // console.log(searchPoint);
 
     let promise = new Promise((resolve, reject) => {
 
@@ -37,21 +40,22 @@ export class UserHtttpService {
         (results) => {
 
           console.log(results);
-          this.user = results;
-          console.log(this.user);
+          this.user.id = results.id;
+          this.user.login = results.login;
+          this.user.avatar_url=results.avatar_url;
+         
 
           resolve();
         },
         (error) => {
-          console.log(error);
-          reject();
-        }
-      );
+          reject(error);
+        });
     });
     return promise;
-  }
+  
+}
 
-  getRepos(searchTerm) {
+  getRepos(searchTerm:string) {
 
     interface ApiResponse {
      name: string;
@@ -60,21 +64,21 @@ export class UserHtttpService {
      created_at: Date;
     }
 
-    let searchPoint = 'https://api.github.com/users/' + searchTerm + '/repos?access_token=' +environment.apiKey;
-
+    let searchEndPoint = 'https://api.github.com/users/'+ searchTerm + '/repos?access_token=' +environment.apiKey;
+  
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse[]>(searchPoint).toPromise().then(
+      this.http.get<ApiResponse[]>(searchEndPoint).toPromise().then(
         (repoResults) => {
           console.log(repoResults);
 
-          this.repos = [];
+           this.repos = []
+          // this.repos = repoResults. description;
           // console.log(this.repos);
 
           for (let i = 0; i < repoResults.length; i++) {
             let repo = new Repo(repoResults[i].name, repoResults[i].description, repoResults[i].html_url, repoResults[i].created_at);
             this.repos.push(repo);
           }
-          console.log(this.repos);
           resolve();
         },
         (error) => {

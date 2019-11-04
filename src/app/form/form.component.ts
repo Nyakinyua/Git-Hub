@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -7,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
   @Output() emitSearch = new EventEmitter<any>();
+  @Output() emitRepo = new EventEmitter<any>();
 
   searchTerm: string;
   constructor() { }
@@ -14,6 +16,11 @@ export class FormComponent implements OnInit {
   
   search() {
     this.emitSearch.emit(this.searchTerm);
+
+  }
+  
+  getRepos(){
+    this.emitRepo.emit(this.searchTerm);
   }
   
   ngOnInit() {

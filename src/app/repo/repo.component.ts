@@ -15,7 +15,7 @@ export class RepoComponent implements OnInit {
   repos: Repo[] = [];
   
   constructor( public userHttpService:UserHtttpService ) { }
-
+  
  
   searchUser(searchTerm) {
 
@@ -24,14 +24,14 @@ export class RepoComponent implements OnInit {
         this.users = this.userHttpService.user;
       },
       (error) => {
-        console.log(error);
+        alert("Cant find User name");
       }
     );
   }
 
   getRepos(searchTerm) {
     this.userHttpService.getRepos(searchTerm).then(
-      (results) => {
+      (success) => {
         this.repos = this.userHttpService.repos;
         console.log(this.repos);
     },
@@ -45,8 +45,10 @@ export class RepoComponent implements OnInit {
  
  ngOnInit() {
 
-    this.searchUser('Nyakinyua');
-    this.getRepos('Nyakinyua');
+   this.searchUser('Nyakinyua')
+    
+    this.getRepos('Nyakinyua')
+    
   }
 
 }
