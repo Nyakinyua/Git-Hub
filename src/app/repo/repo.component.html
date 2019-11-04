@@ -18,7 +18,7 @@
   <div class="card-columns">
     <div *ngFor="let repo of repos">
       <div class="card">
-        <h4 class="card-header-title"> {{repo.name }}</h4>
+        <h4 class="card-header-title"> {{repo.name  | uppercase  }}</h4>
 
         <h5 class="mb-0 pb-3 pt-2"> {{repo.description}} </h5>
 
