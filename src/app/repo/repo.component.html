@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <app-form (emitSearch)="searchUser($event)" (emitRepo)="getRepos($event)"></app-form>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"> User: {{users.login}}</h5>
@@ -14,7 +14,7 @@
   </div>
 
   <!-- <div *ngIf="repos"> -->
-  <h3>Repos</h3>
+  <h2>Repositories</h2>
   <div class="card-columns ">
     <div *ngFor="let repo of repos">
       <div class="card">
