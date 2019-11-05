@@ -14,7 +14,7 @@ export class UserHtttpService{
   user: User;
   repos: Repo[]=[];
   constructor(private http:HttpClient) {
-    this.user = new User (0,"","");
+    this.user = new User (0,"","",0,0,"");
     // this.repos []= new Repo [("","","", new Date();
    }
 
@@ -28,6 +28,9 @@ export class UserHtttpService{
       id: number;       
       login: string;
       avatar_url: string;
+      followers:number;
+      following:number;
+      email:string
     }
 
     let searchPoint = 'https://api.github.com/users/' + searchTerm + '?access_token=' + environment.apiKey;
@@ -43,6 +46,9 @@ export class UserHtttpService{
           this.user.id = results.id;
           this.user.login = results.login;
           this.user.avatar_url=results.avatar_url;
+          this.user.followers=results.followers;
+          this.user.following=results.followers;
+          this.user.email=results.email;
          
 
           resolve();
