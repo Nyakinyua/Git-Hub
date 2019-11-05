@@ -24,7 +24,7 @@ This is an Angular web application that  enabes a user to  search for any user n
 * This project was generated with Angular CLI version 8.3.9. Bootstrap with css stylesheet.
 
 ## Support and contact details
-Incase of a problem, issue or need more clarification, feel free to send an email @
+Incase of questions, issues conerning the web app, improvements and add ons to the application or need more clarification, feel free to contact developer via email @
 {wanyakinyua968@gmail.com}
 
 
