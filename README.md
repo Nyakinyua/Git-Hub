@@ -1,26 +1,35 @@
 # GitHub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Author:
+Nyakinyua Wanjiru
+### Authors' information
+Email: Wanyakinyua968@gmal.com
+Address: 20241-00100
+Software Developer.
+Telephone no. +254721317715
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Description
+This is an Angular web application that  enabes a user to  search for any user name on git hub and get the data and repositories belonging to that user name. 
 
-## Build
+Setup Requirements
+A digital device with internet connectivity.
+A digital device with colored screen.
+Wifi or Bundles.
+Technologies Used
+## Technologies used
+This project was generated with Angular CLI version 8.3.9. and Bootstrap with css stylesheet.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Support and contact details
+Incase of a problem, issue or need more clarification, feel free to send an email @
+{wanyakinyua968@gmail.com}
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+License
+This project is licensed by [MIT License] (LICENSE). Copyright (c) 2019
 
 ## Further help
 
