@@ -1,6 +1,7 @@
 .nav-bar{
    
     background-color: #ffffff;
+    max-height: 40px;
     }
 h1 {
     font-size: 38px;

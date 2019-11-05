@@ -1,12 +1,19 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef ,Renderer2, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[appRepoHover]'
 })
 export class RepoHoverDirective {
 
-  constructor(private elem: ElementRef) {
-    this.elem.nativeElement.style.color= 'cyan';
-   }
+  constructor(private elementRef:ElementRef,private renderer:Renderer2) { }
 
+  @HostListener('mouseenter') mouseover(){
+    this.renderer.setStyle(this.elementRef.nativeElement, 'color', 'red');
+  }
+  @HostListener('mouseleave') mouseleave(){
+    this.renderer.setStyle(this.elementRef.nativeElement, 'color', 'black');
+    
+  }
 }
+
+
